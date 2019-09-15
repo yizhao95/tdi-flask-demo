@@ -2,6 +2,5 @@ Flask==0.10.1
 gunicorn==19.9.0
 requests==2.20.0
 bokeh
-flask==0.8
 numpy==1.6.2
 pandas==0.8.1
