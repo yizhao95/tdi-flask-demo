@@ -6,7 +6,7 @@ app = Flask(__name__)
 def index():
   return render_template('index.html')
 
-@app.route('/<stockcode>')
+@app.route('/stock?id=<stockcode>')
 def closingprice(stockcode):
    from bokeh.plotting import figure, output_file, show
    df = pd.read_csv('data.csv')
