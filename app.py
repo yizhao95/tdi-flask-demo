@@ -6,9 +6,10 @@ app = Flask(__name__)
 def index():
   return render_template('index.html')
 
-@app.route('/stock?id=<stockcode>')
-def closingprice(stockcode):
+@app.route('/stock',methods=['post','get'])
+def closingprice():
    from bokeh.plotting import figure, output_file, show
+   stockcode = request.args.get('id')
    df = pd.read_csv('data.csv')
    df = df[df['ticker']==stockcode]
    df.sort_values(by=['date'])
